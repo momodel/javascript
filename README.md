@@ -18,7 +18,15 @@ Feedback via issues, pull requests are all welcomed. If you do not have a Github
 
 欢迎通过 Issues 或 PR 提出建议和反馈。如果你没有 Github  账号，或由于其他原因不便提交 Issues，也可以通过[邮件](mailto:jh.chen@mail.mcgill.ca)联系我。
 
+
 # Acknowledgement
-This translation is an update and improvement of the translation by [JasonBoy](https://github.com/JasonBoy/javascript/tree/master/react) in 2018.
+This translation is an update and improvement of the outdated translation by [JasonBoy](https://github.com/JasonBoy/javascript/tree/master/react) in 2018.
 
 感谢 [JasonBoy](https://github.com/JasonBoy/javascript/tree/master/react) 2018年的翻译版本，为本版翻译奠定了基础。
+
+# Sample Changes
+
+<img width="800" alt="Screen Shot 2020-03-10 at 11 09 36 PM" src="https://user-images.githubusercontent.com/8275280/76378790-c26b3600-6324-11ea-878a-4d1a0a570374.png">
+<img width="800" alt="Screen Shot 2020-03-10 at 11 09 24 PM" src="https://user-images.githubusercontent.com/8275280/76378791-c303cc80-6324-11ea-8e10-d066ec64ffda.png">
+<img width="800" alt="Screen Shot 2020-03-10 at 11 10 14 PM" src="https://user-images.githubusercontent.com/8275280/76378792-c303cc80-6324-11ea-9562-206cb20425ab.png">
+<img width="800" alt="Screen Shot 2020-03-10 at 11 10 38 PM" src="https://user-images.githubusercontent.com/8275280/76378793-c39c6300-6324-11ea-8499-a8eac0f9f290.png">
