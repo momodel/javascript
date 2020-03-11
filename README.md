@@ -5,7 +5,7 @@
 [![Generic badge](https://img.shields.io/badge/Version-Feb7%202020-<COLOR>.svg)](https://shields.io/) 
 [![Generic badge](https://img.shields.io/badge/UpToDate-Not%20Yet-<COLOR>.svg)](https://shields.io/) 
 
-# Todo
+# Update
 
  - [x] 同步原版内容 (Synced with up-to-date English version) 
  - [x] 增加术语注释 (Added notes for technical terms) 
