@@ -1,6 +1,8 @@
+
+
 # Airbnb React/JSX 风格指南
 
-此风格指南主要基于目前流行的 JavaScript 标准。在项目中是否应允许使用一些惯例（如 async/await，静态 class 属性等），应视具体情况而定。目前，本指南不包含，也不推荐使用任何第三阶段*前的功能。
+此风格指南主要基于目前流行的 JavaScript 标准。对于项目中是否应允许使用一些惯例（如 async/await，静态 class 属性等）的问题，应视具体情况而定。目前，本指南不包含并且不推荐使用任何第三阶段*前的功能。
 
 > 译者注：第三阶段指 [TC39 流程](https://tc39.es/process-document/)中的 Stage 3 - Candidate。每个新的 ECMAScript 提案从起草到完成共分五个阶段。
 
@@ -26,8 +28,9 @@
 
   - 每个文件只写一个模块.
     - 但多个[无状态模块](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)可以放在单个文件中. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-  - 推荐使用JSX语法.
-  - 不要使用 `React.createElement`，除非从一个非JSX的文件中初始化你的app.
+  - 推荐使用 JSX 语法.
+  - 不要使用 `React.createElement`，除非在从一个非 JSX 的文件中初始化 app.
+-  只有在使用 `arrayOf`, `objectOf`,  或 `shape` 明确指出 `arrays` 和 `objects` 所包含的内容时，[`react/forbid-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md)  才会允许这个属性 (props). 
 
 ## 创建模块
    Class vs React.createClass vs stateless  
@@ -82,7 +85,8 @@
 
 ## Naming 命名
 
-  - **扩展名**: React模块使用 `.jsx` 扩展名.
+  - **扩展名**: React模块使用 `.jsx` 扩展名. 
+	  >eslint: [`react/jsx-filename-extension`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
   
   - **文件名**: 文件名使用帕斯卡命名. 如, `ReservationCard.jsx`.
   
@@ -114,9 +118,9 @@
     // good
     import Footer from './Footer';
     ```
-  - **高阶模块命名**: 对于生成一个新的模块，其中的模块名 `displayName` 应该为高阶模块名和传入模块名的组合. 例如, 高阶模块 `withFoo()`, 当传入一个 `Bar` 模块的时候， 生成的模块名 `displayName` 应该为 `withFoo(Bar)`.
+  - **高阶模块命名**: 对于生成一个新的模块，其中的模块名 `displayName` 应该为高阶模块名和传入模块名的组合. 例如, 高阶模块 `withFoo()`, 当传入一个 `Bar` 模块的时候， 生成的模块名 `displayName` 应为 `withFoo(Bar)`.
 
-    > 为什么？一个模块的 `displayName` 可能会在开发者工具或者错误信息中使用到，因此有一个能清楚的表达这层关系的值能帮助我们更好的理解模块发生了什么，更好的Debug.
+    > 为什么？一个模块的 `displayName` 可能会在开发者工具或者错误信息中使用到，因此有一个能清楚的表达这层关系的值能帮助我们更好地理解模块发生了什么，更好地进行Debug。
 
     ```jsx
     // bad
@@ -194,6 +198,26 @@
     >
       <Quux />
     </Foo>
+    
+	// bad
+	{showButton &&
+	  <Button />
+	}
+
+	// bad
+	{
+	 showButton &&
+	   <Button />
+	}
+
+	// good
+
+	{showButton && (
+		<Button />
+	)}
+
+	// good
+	{showButton && <Button />}
     ```
 
 ## Quotes 单引号还是双引号
@@ -332,7 +356,11 @@
   // good
   <div />
   ```
-  - 避免使用数组的index来作为属性`key`的值，推荐使用唯一ID. ([为什么?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+  - 避免使用数组的 index 来作为 `key` 属性的值。
+	> 译者注：key 属性指名称为 `key` 的属性，即 `props.key`
+
+	应当使用稳定不变的 ID。(使用不稳定的 ID 是一个[反面模式](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)，会降低性能、造成组件状态出错) 。特别是当元素的顺序可能改变的情况下，不应使用数组的 index  作为 `key`.
+	  > 译者注：反面模式 (Anti-Pattern)，指低效或是有待优化的软件设计模式。
 
   ```jsx
   // bad
@@ -421,16 +449,16 @@
   特别提醒：尽可能地筛选出不必要的属性。同时，使用[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)来预防问题出现。  
   
   ```jsx
-  // good
-  render() {
-    const { irrelevantProp, ...relevantProps  } = this.props;
-    return <WrappedComponent {...relevantProps} />
-  }
-
   // bad
   render() {
     const { irrelevantProp, ...relevantProps  } = this.props;
     return <WrappedComponent {...this.props} />
+  }
+
+  // good
+  render() {
+    const { irrelevantProp, ...relevantProps  } = this.props;
+    return <WrappedComponent {...relevantProps} />
   }    
   ```   
   
@@ -509,7 +537,7 @@
 
 ## Methods 函数
 
-  - 使用箭头函数来获取本地变量.
+  - 使用箭头函数来获取本地变量。这使得传递数据给事件处理器 (event handler) 很方便。不过，尤其是当传递给自定义的纯组件 (PureComponent) 时，要确保这些箭头函数对性能影响不是太大，因为它们会每次都会触发可能无意义的重新渲染。
 
     ```jsx
     function ItemList(props) {
@@ -518,7 +546,7 @@
           {props.items.map((item, index) => (
             <Item
               key={item.key}
-              onClick={() => doSomethingWith(item.name, index)}
+              onClick={(event) => { doSomethingWith(event, item.name, index); }}
             />
           ))}
         </ul>
@@ -528,7 +556,7 @@
  
   - 当在 `render()` 里使用事件处理方法时，提前在构造函数里把 `this` 绑定上去. eslint: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
-    > 为什么? 在每次 `render` 过程中， 再调用 `bind` 都会新建一个新的函数，浪费资源.
+    > 为什么? 在每次 `render` 过程中， 再调用 `bind` 都会新建一个新的函数，浪费资源。在类成员变量 (class fields) 里不要使用箭头函数，因为箭头函数会造成它难以测试和调试，并会降低性能。从概念上讲，类成员变量存的应该是数据，而不是逻辑或方法。
 
     ```jsx
     // bad
@@ -541,7 +569,18 @@
         return <div onClick={this.onClickDiv.bind(this)} />;
       }
     }
+    
+	// very bad
+	class extends React.Component {
+	  onClickDiv = () => {
+	    // do stuff
+	  }
 
+	  render() {
+	    return <div onClick={this.onClickDiv} />
+	  }
+	}
+	
     // good
     class extends React.Component {
       constructor(props) {
