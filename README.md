@@ -14,9 +14,9 @@
 
 # Feedback
 
-Feedback via issues, pull requests are all welcomed. If you do not have a Github account for that, you may also reach me via [email](mailto:jh.chen@mail.mcgill.ca)
+Feedback via pull requests are all welcomed. If you do not have a Github account for that, you may also reach me via [email](mailto:jh.chen@mail.mcgill.ca)
 
-欢迎通过 Issues 或 PR 提出建议和反馈。如果你没有 Github  账号，或由于其他原因不便提交 Issues，也可以通过[邮件](mailto:jh.chen@mail.mcgill.ca)联系我。
+欢迎通过 PR 提出建议和反馈。如果你没有 Github  账号，或由于其他原因不便提交 PR，也可以通过[邮件](mailto:jh.chen@mail.mcgill.ca)联系我。
 
 
 # Acknowledgement
