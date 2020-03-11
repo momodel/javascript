@@ -7,4 +7,5 @@
 
 # Acknowledgement
 This translation is an update and improvement of the outdated translation by [JasonBoy](https://github.com/JasonBoy/javascript/tree/master/react)
+
 本版翻译是在 [JasonBoy](https://github.com/JasonBoy/javascript/tree/master/react) 版翻译的基础上进行更新和优化。
