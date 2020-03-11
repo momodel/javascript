@@ -9,7 +9,7 @@
 
  - [x] 同步原版内容 (Synced with up-to-date English version) 
  - [x] 增加术语注释 (Added notes for technical terms) 
- - [x] 优化文字表达 (Enhanced Chinese Translation)
+ - [x] 优化文字表达 (Enhanced expressions for better readability)
  - [ ] 在 Read The Docs 上发布，提升阅读体验 (Publish to Read The Docs for better reading experience)
 
 # Feedback
