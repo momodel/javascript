@@ -3,15 +3,14 @@
 > 翻译自 [Airbnb React/JSX Style Guide Style](https://github.com/airbnb/javascript/tree/master/react)
 
 [![Generic badge](https://img.shields.io/badge/Version-Feb7%202020-<COLOR>.svg)](https://shields.io/) 
-[![Generic badge](https://img.shields.io/badge/UpToDate-Not%20Yet-<COLOR>.svg)](https://shields.io/) 
+[![Generic badge](https://img.shields.io/badge/UpToDate-Yes-<COLOR>.svg)](https://shields.io/) 
 
 # Update
 
  - [x] 同步原版内容 (Synced with up-to-date English version) 
  - [x] 增加术语注释 (Added notes for technical terms) 
  - [x] 优化文字表达 (Enhanced Chinese Translation)
- - [ ] 提升阅读体验 (Improve UX and Reading Experience)
- - [ ] 在 Read The Docs 上发布 (Publish to Read The Docs for even better reading experience)
+ - [ ] 在 Read The Docs 上发布，提升阅读体验 (Publish to Read The Docs for better reading experience)
 
 # Feedback
 
