@@ -27,7 +27,6 @@
   1. [Events](#events)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
-  1. [Testing](#testing)
   1. [Resources(资源)](#resources)
  
 
@@ -2999,45 +2998,8 @@
     Number.isFinite(parseInt('2e3', 10)); // true
     ```
 
-## Testing
-
-  <a name="30.1"></a>
-  <a name="testing--yup"></a>
-  - [30.1](#testing--yup) **Yup.**
-
-    ```javascript
-    function foo() {
-      return true;
-    }
-    ```
-
-  <a name="30.2"></a>
-  <a name="testing--for-real"></a>
-  - [30.2](#testing--for-real) **No, but seriously**:
-   - 无论用那个测试框架，你都需要写测试。
-   - 尽量去写很多小而美的纯函数，减少突变的发生
-   - 小心 stub 和 mock —— 这会让你的测试变得脆弱。
-   - 在 Airbnb 首选 [`mocha`](https://www.npmjs.com/package/mocha)。 [`tape`](https://www.npmjs.com/package/tape) 偶尔被用来测试一些小的，独立的模块。
-   - 100%测试覆盖率是我们努力的目标，即便实际上很少达到。
-   - 每当你修了一个bug， 都要写一个回归测试。 一个bug修复了，没有回归测试，很可能以后会再次出问题。
 
 **[⬆ back to top](#目录)**
-
-
-## Performance
-
-  - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
-  - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
-  - [Try/Catch Cost In a Loop](https://jsperf.com/try-catch-in-loop-cost)
-  - [Bang Function](https://jsperf.com/bang-function)
-  - [jQuery Find vs Context, Selector](https://jsperf.com/jquery-find-vs-context-sel/13)
-  - [innerHTML vs textContent for script text](https://jsperf.com/innerhtml-vs-textcontent-for-script-text)
-  - [Long String Concatenation](https://jsperf.com/ya-string-concat)
-  - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
-  - Loading...
-
-**[⬆ back to top](#目录)**
-
 
 ## Resources 资源文档
 
