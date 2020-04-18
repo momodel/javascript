@@ -599,7 +599,7 @@
   1. `shouldComponentUpdate` 判断模块需不需要重新渲染
   1. `componentWillUpdate` 上面的方法返回 `true`， 模块将重新渲染
   1. `componentDidUpdate` 模块渲染结束
-  1. `componentWillUnmount` 模块将从DOM中清除, 做一些清理任务
+  1. `componentWillUnmount` 模块将从DOM中清除, 做一些清理任务【定时器或者监听事件之类的】
   1. *点击回调或者事件处理器* 如 `onClickSubmit()` 或 `onChangeDescription()`
   1. *`render` 里的 getter 方法* 如 `getSelectReason()` 或 `getFooterContent()`
   1. *可选的 render 方法* 如 `renderNavigation()` 或 `renderProfilePicture()`
